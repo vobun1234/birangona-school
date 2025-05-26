@@ -1,76 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
-    header { background: #3498db; color: white; padding: 1rem; text-align: center; }
-    nav { background: #2c3e50; padding: 0.5rem; text-align: center; }
-    nav a { color: white; margin: 0 10px; text-decoration: none; }
-    section { padding: 1rem; }
-    form input, form textarea { display: block; margin-bottom: 10px; width: 100%; padding: 8px; }
-    .form-section { background: white; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+    body { font-family: sans-serif; text-align: center; background: #f0f8ff; padding: 40px; }
+    h1 { color: #2c3e50; }
+    .menu { margin-top: 30px; }
+    .menu button {
+      display: block; width: 250px; margin: 10px auto; padding: 15px; font-size: 18px;
+      background-color: #3498db; color: white; border: none; border-radius: 10px; cursor: pointer;
+    }
+    .menu button:hover { background-color: #2980b9; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</h1>
-    <p>সরকারি অনুমোদিত মাধ্যমিক বিদ্যালয়</p>
-  </header>
-
-  <nav>
-    <a href="#">হোম</a>
-    <a href="#">ভর্তি</a>
-    <a href="#">শিক্ষকবৃন্দ</a>
-    <a href="#">নোটিশ</a>
-    <a href="#">গ্যালারি</a>
-    <a href="#">ফলাফল</a>
-    <a href="#">বেতন</a>
-    <a href="#">যোগাযোগ</a>
-  </nav>
-
-  <section>
-    <div class="form-section">
-      <h2>ভর্তি ফর্ম</h2>
-      <form>
-        <input type="text" placeholder="পূর্ণ নাম">
-        <input type="text" placeholder="শ্রেণি">
-        <input type="text" placeholder="জন্ম তারিখ">
-        <textarea placeholder="ঠিকানা"></textarea>
-        <input type="submit" value="জমা দিন">
-      </form>
-    </div>
-
-    <div class="form-section">
-      <h2>বেতন প্রদান</h2>
-      <form>
-        <input type="text" placeholder="নাম">
-        <input type="text" placeholder="ক্লাস">
-        <input type="text" placeholder="TRX নাম্বার">
-        <input type="submit" value="জমা দিন">
-      </form>
-    </div>
-
-    <div class="form-section">
-      <h2>ফলাফল দেখুন</h2>
-      <form>
-        <input type="text" placeholder="শিক্ষার্থীর আইডি দিন">
-        <input type="submit" value="দেখুন">
-      </form>
-    </div>
-
-    <div class="form-section">
-      <h2>যোগাযোগ</h2>
-      <form>
-        <input type="text" placeholder="আপনার নাম">
-        <input type="text" placeholder="মোবাইল নাম্বার">
-        <textarea placeholder="মেসেজ"></textarea>
-        <input type="submit" value="পাঠান">
-      </form>
-    </div>
-  </section>
+  <h1>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</h1>
+  <div class="menu">
+    <button onclick="location.href='admission.html'">ভর্তি ফর্ম</button>
+    <button onclick="location.href='teachers.html'">শিক্ষক ফর্ম</button>
+    <button onclick="location.href='notice.html'">নোটিশ ফর্ম</button>
+    <button onclick="location.href='gallery.html'">গ্যালারি ফর্ম</button>
+    <button onclick="location.href='payment.html'">TRX নম্বার দিয়ে বেতন</button>
+    <button onclick="location.href='login.html'">লগইন ফর্ম</button>
+    <button onclick="location.href='register.html'">রেজিস্ট্রেশন ফর্ম</button>
+    <button onclick="location.href='contact.html'">যোগাযোগ ফর্ম</button>
+  </div>
 </body>
 </html>

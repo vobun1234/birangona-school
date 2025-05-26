@@ -4,27 +4,64 @@
   <meta charset="UTF-8">
   <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
   <style>
-    body { font-family: sans-serif; text-align: center; background: #f0f8ff; padding: 40px; }
-    h1 { color: #2c3e50; }
-    .menu { margin-top: 30px; }
-    .menu button {
-      display: block; width: 250px; margin: 10px auto; padding: 15px; font-size: 18px;
-      background-color: #3498db; color: white; border: none; border-radius: 10px; cursor: pointer;
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f0f8ff;
+      margin: 0;
+      padding: 0;
     }
-    .menu button:hover { background-color: #2980b9; }
+    .header {
+      background-image: url('https://i.ibb.co/d5md9Lq/school.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+    }
+    h1 {
+      font-size: 36px;
+    }
+    .menu {
+      margin-top: 30px;
+      padding-bottom: 40px;
+    }
+    .menu button {
+      display: block;
+      width: 260px;
+      margin: 10px auto;
+      padding: 15px;
+      font-size: 18px;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+    }
   </style>
 </head>
 <body>
-  <h1>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</h1>
+  <div class="header">
+    <h1>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</h1>
+  </div>
   <div class="menu">
     <button onclick="location.href='admission.html'">ভর্তি ফর্ম</button>
     <button onclick="location.href='teachers.html'">শিক্ষক ফর্ম</button>
     <button onclick="location.href='notice.html'">নোটিশ ফর্ম</button>
     <button onclick="location.href='gallery.html'">গ্যালারি ফর্ম</button>
     <button onclick="location.href='payment.html'">TRX নম্বার দিয়ে বেতন</button>
-    <button onclick="location.href='login.html'">লগইন ফর্ম</button>
-    <button onclick="location.href='register.html'">রেজিস্ট্রেশন ফর্ম</button>
     <button onclick="location.href='contact.html'">যোগাযোগ ফর্ম</button>
   </div>
+  <script>
+    const buttons = document.querySelectorAll('.menu button');
+    const colors = ["#e74c3c", "#8e44ad", "#f39c12", "#16a085", "#2980b9"];
+    let i = 0;
+    setInterval(() => {
+      buttons.forEach(btn => {
+        btn.style.backgroundColor = colors[i % colors.length];
+      });
+      i++;
+    }, 1000);
+  </script>
 </body>
 </html>

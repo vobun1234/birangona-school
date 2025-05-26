@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ভর্তি ফরম</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e8f0fe;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+    }
+
+    .success {
+      text-align: center;
+      color: green;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>ভর্তির ফরম</h2>
+
+  <form onsubmit="showMessage(); return false;">
+    <label>ছাত্র/ছাত্রীর নাম:</label>
+    <input type="text" required>
+
+    <label>পিতার নাম:</label>
+    <input type="text" required>
+
+    <label>মাতার নাম:</label>
+    <input type="text" required>
+
+    <label>জন্ম তারিখ:</label>
+    <input type="date" required>
+
+    <label>বর্তমান ঠিকানা:</label>
+    <input type="text" required>
+
+    <label>শ্রেণি:</label>
+    <select required>
+      <option value="">শ্রেণি নির্বাচন করুন</option>
+      <option>১ম</option>
+      <option>২য়</option>
+      <option>৩য়</option>
+      <option>৪র্থ</option>
+      <option>৫ম</option>
+      <option>৬ষ্ঠ</option>
+      <option>৭ম</option>
+      <option>৮ম</option>
+      <option>৯ম</option>
+      <option>১০ম</option>
+    </select>
+
+    <label>অভিভাবকের মোবাইল নাম্বার:</label>
+    <input type="tel" required>
+
+    <button type="submit">জমা দিন</button>
+
+    <div class="success" id="successMessage" style="display:none;">ভর্তি ফরম জমা সফল হয়েছে!</div>
+  </form>
+
+  <script>
+    function showMessage() {
+      document.getElementById('successMessage').style.display = 'block';
+    }
+  </script>
+
+</body>
+      </html>

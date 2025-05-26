@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>বেতন প্রদান</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; background: #fff8f0; padding: 40px; }
+    input, button, textarea {
+      padding: 10px; margin: 10px; font-size: 18px;
+      border-radius: 8px; border: 1px solid #ccc; width: 80%;
+    }
+    button {
+      background-color: #27ae60; color: white; border: none;
+    }
+    button:hover { background-color: #219150; }
+    .payment-number {
+      background-color: #eee; padding: 10px; font-size: 20px; border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>TRX নম্বার দিয়ে বেতন প্রদান</h2>
+  <p>বিকাশ/নগদ নম্বর: <span class="payment-number" id="payNum">01937201839</span></p>
+  <button onclick="copyNumber()">নম্বর কপি করুন</button>
+  <form>
+    <input type="text" placeholder="নাম লিখুন" required><br>
+    <input type="text" placeholder="রোল নম্বর" required><br>
+    <input type="text" placeholder="TRX নম্বর" required><br>
+    <button type="submit">জমা দিন</button>
+  </form>
+  <script>
+    function copyNumber() {
+      const copyText = document.getElementById("payNum").innerText;
+      navigator.clipboard.writeText(copyText).then(() => {
+        alert("নম্বর কপি হয়েছে: " + copyText);
+      });
+    }
+  </script>
+</body>
+</html>

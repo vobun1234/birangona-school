@@ -1,67 +1,87 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
   <style>
     body {
-      font-family: sans-serif;
-      text-align: center;
-      background: #f0f8ff;
       margin: 0;
-      padding: 0;
-    }
-    .header {
-      background-image: url('https://i.ibb.co/d5md9Lq/school.jpg');
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
       background-size: cover;
       background-position: center;
-      padding: 80px 20px;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
+      transition: background-image 1s ease-in-out;
     }
+
     h1 {
-      font-size: 36px;
+      font-size: 40px;
+      padding: 40px 10px 20px;
+      background: rgba(0, 0, 0, 0.6);
     }
-    .menu {
-      margin-top: 30px;
-      padding-bottom: 40px;
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
     }
-    .menu button {
-      display: block;
-      width: 260px;
-      margin: 10px auto;
-      padding: 15px;
-      font-size: 18px;
+
+    .btn {
+      font-size: 20px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
       color: white;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.5s ease;
+      transition: background 0.5s;
+    }
+
+    .btn:hover {
+      background-color: #444;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .btn {
+        font-size: 16px;
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</h1>
+
+  <h1>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</h1>
+
+  <div class="button-container">
+    <button class="btn" onclick="location.href='admission.html'">ভর্তি</button>
+    <button class="btn" onclick="location.href='teachers.html'">শিক্ষক তালিকা</button>
+    <button class="btn" onclick="location.href='notices.html'">নোটিশ</button>
+    <button class="btn" onclick="location.href='gallery.html'">গ্যালারি</button>
+    <button class="btn" onclick="location.href='contact.html'">যোগাযোগ</button>
+    <button class="btn" onclick="location.href='payment.html'">TRX দিয়ে বেতন দিন</button>
   </div>
-  <div class="menu">
-    <button onclick="location.href='admission.html'">ভর্তি ফর্ম</button>
-    <button onclick="location.href='teachers.html'">শিক্ষক ফর্ম</button>
-    <button onclick="location.href='notice.html'">নোটিশ ফর্ম</button>
-    <button onclick="location.href='gallery.html'">গ্যালারি ফর্ম</button>
-    <button onclick="location.href='payment.html'">TRX নম্বার দিয়ে বেতন</button>
-    <button onclick="location.href='contact.html'">যোগাযোগ ফর্ম</button>
-  </div>
+
   <script>
-    const buttons = document.querySelectorAll('.menu button');
-    const colors = ["#e74c3c", "#8e44ad", "#f39c12", "#16a085", "#2980b9"];
-    let i = 0;
-    setInterval(() => {
-      buttons.forEach(btn => {
-        btn.style.backgroundColor = colors[i % colors.length];
-      });
-      i++;
-    }, 1000);
+    const backgrounds = [
+      'https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1600&q=80'
+    ];
+
+    let index = 0;
+    function changeBackground() {
+      document.body.style.backgroundImage = `url(${backgrounds[index]})`;
+      index = (index + 1) % backgrounds.length;
+    }
+
+    changeBackground();
+    setInterval(changeBackground, 30000);
   </script>
 </body>
 </html>

@@ -1,104 +1,87 @@
-
 <!DOCTYPE html>
-<html lang="bn">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-size: cover;
-            background-repeat: no-repeat;
-            animation: backgroundChange 30s infinite alternate;
-        }
-        @keyframes backgroundChange {
-            0% {background-image: url('https://i.imgur.com/YOUR_IMAGE_1.jpg');}
-            50% {background-image: url('https://i.imgur.com/YOUR_IMAGE_2.jpg');}
-            100% {background-image: url('https://i.imgur.com/YOUR_IMAGE_3.jpg');}
-        }
-        h1, h2 {
-            text-align: center;
-            font-size: 3em;
-        }
-        .school-name span {
-            display: inline-block;
-            font-weight: bold;
-            font-size: 2.5em;
-            animation: colorChange 3s infinite alternate;
-        }
-        .school-name span:nth-child(1) { color: red; }
-        .school-name span:nth-child(2) { color: green; }
-        .school-name span:nth-child(3) { color: blue; }
-        .school-name span:nth-child(4) { color: purple; }
-        @keyframes colorChange {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2in;
-            margin-top: 30px;
-        }
-        .button {
-            padding: 20px 40px;
-            font-size: 1.5em;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: transform 0.3s, background-color 10s linear;
-            background-color: orange;
-        }
-        .button:hover {
-            transform: scale(1.1);
-        }
-        .teacher {
-            margin: 20px;
-            font-size: 1.2em;
-            text-align: center;
-        }
-        .copy-btn {
-            padding: 5px 10px;
-            margin-left: 10px;
-            font-size: 1em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 40px;
+      padding: 40px 10px 20px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .btn {
+      font-size: 20px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.5s;
+    }
+
+    .btn:hover {
+      background-color: #444;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .btn {
+        font-size: 16px;
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h2 style="animation: colorChange 5s infinite alternate;">Md.Vobun(Tauhedul islam)</h2>
-    <div class="school-name" style="text-align:center;">
-        <span>বীরাঙ্গনা</span>
-        <span>সখিনা</span>
-        <span>এম.টি.সি</span>
-        <span>মডেল স্কুল</span>
-    </div>
 
-    <div class="buttons">
-        <button class="button" onclick="delayedNavigation('form1.html')">ভর্তি ফর্ম</button>
-        <button class="button" onclick="delayedNavigation('form2.html')">শিক্ষক তালিকা</button>
-        <button class="button" onclick="delayedNavigation('form3.html')">TRX পেমেন্ট</button>
-    </div>
+  <h1>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</h1>
 
-    <div class="teacher">
-        <p><strong>প্রধান শিক্ষক:</strong> মো: এমদাদুল হক মিলন - 01960393529</p>
-        <p><strong>সহ: প্রধান শিক্ষক:</strong> মো: মাসুদ মিয়া - 01906504938 <button class="copy-btn" onclick="copyNumber('01906504938')">Copy</button></p>
-        <p><strong>সেনি: সহ: শিক্ষক:</strong> মো: রাকিবুল ইসলাম - 01932123148 <button class="copy-btn" onclick="copyNumber('01932123148')">Copy</button></p>
-    </div>
+  <div class="button-container">
+    <button class="btn" onclick="location.href='admission.html'">ভর্তি</button>
+    <button class="btn" onclick="location.href='teachers.html'">শিক্ষক তালিকা</button>
+    <button class="btn" onclick="location.href='notices.html'">নোটিশ</button>
+    <button class="btn" onclick="location.href='gallery.html'">গ্যালারি</button>
+    <button class="btn" onclick="location.href='contact.html'">যোগাযোগ</button>
+    <button class="btn" onclick="location.href='payment.html'">TRX দিয়ে বেতন দিন</button>
+  </div>
 
-    <script>
-        function copyNumber(number) {
-            navigator.clipboard.writeText(number);
-            alert('Number copied: ' + number);
-        }
+  <script>
+    const backgrounds = [
+      'https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1600&q=80'
+    ];
 
-        function delayedNavigation(url) {
-            setTimeout(() => {
-                window.location.href = url;
-            }, 1000);
-        }
-    </script>
+    let index = 0;
+    function changeBackground() {
+      document.body.style.backgroundImage = `url(${backgrounds[index]})`;
+      index = (index + 1) % backgrounds.length;
+    }
+
+    changeBackground();
+    setInterval(changeBackground, 30000);
+  </script>
 </body>
 </html>

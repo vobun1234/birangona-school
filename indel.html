@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+    }
+    .sub-header {
+      font-size: 1.5em;
+      margin-top: 20px;
+      animation: colorChange 5s infinite alternate;
+    }
+    #creator-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid black;
+      margin-top: 10px;
+    }
+    .school-name {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .school-name span {
+      display: inline-block;
+      padding: 0 5px;
+      animation: colorChange 3s infinite alternate;
+    }
+    @keyframes colorChange {
+      0% { color: red; }
+      25% { color: blue; }
+      50% { color: green; }
+      75% { color: purple; }
+      100% { color: orange; }
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0;
+    }
+
+    .button {
+      width: 200px;
+      height: 180px;
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      animation: buttonBgColor 10s infinite alternate;
+    }
+
+    @keyframes buttonBgColor {
+      0% { background-color: #ffb3b3; }
+      25% { background-color: #b3d9ff; }
+      50% { background-color: #b3ffb3; }
+      75% { background-color: #ffffb3; }
+      100% { background-color: #ffccff; }
+    }
+
+    .label {
+      position: relative;
+      z-index: 2;
+      font-size: 1.1em;
+      font-weight: bold;
+      background: rgba(255,255,255,0.8);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .label i {
+      margin-right: 8px;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background-size: cover;
+      background-position: center;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes bgChange1 {
+      0% { background-image: url('https://via.placeholder.com/200x180?text=School+A1'); }
+      50% { background-image: url('https://via.placeholder.com/200x180?text=School+A2'); }
+      100% { background-image: url('https://via.placeholder.com/200x180?text=School+A3'); }
+    }
+    @keyframes bgChange2 {
+      0% { background-image: url('https://via.placeholder.com/200x180?text=School+B1'); }
+      50% { background-image: url('https://via.placeholder.com/200x180?text=School+B2'); }
+      100% { background-image: url('https://via.placeholder.com/200x180?text=School+B3'); }
+    }
+    @keyframes bgChange3 {
+      0% { background-image: url('https://via.placeholder.com/200x180?text=School+C1'); }
+      50% { background-image: url('https://via.placeholder.com/200x180?text=School+C2'); }
+      100% { background-image: url('https://via.placeholder.com/200x180?text=School+C3'); }
+    }
+    @keyframes bgChange4 {
+      0% { background-image: url('https://via.placeholder.com/200x180?text=School+D1'); }
+      50% { background-image: url('https://via.placeholder.com/200x180?text=School+D2'); }
+      100% { background-image: url('https://via.placeholder.com/200x180?text=School+D3'); }
+    }
+    @keyframes bgChange5 {
+      0% { background-image: url('https://via.placeholder.com/200x180?text=School+E1'); }
+      50% { background-image: url('https://via.placeholder.com/200x180?text=School+E2'); }
+      100% { background-image: url('https://via.placeholder.com/200x180?text=School+E3'); }
+    }
+    @keyframes bgChange6 {
+      0% { background-image: url('https://via.placeholder.com/200x180?text=School+F1'); }
+      50% { background-image: url('https://via.placeholder.com/200x180?text=School+F2'); }
+      100% { background-image: url('https://via.placeholder.com/200x180?text=School+F3'); }
+    }
+
+    .teacher-list {
+      display: none;
+      margin-top: 20px;
+    }
+    .teacher-list h3 {
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="sub-header">Md.Vobun (Tauhedul Islam)</div>
+  <img id="creator-photo" src="your_photo.jpg" alt="Your Photo">
+  <div class="school-name">
+    <span>বীরাঙ্গনা</span>
+    <span>সখিনা</span>
+    <span>এম.টি.সি</span>
+    <span>মডেল স্কুল</span>
+  </div>
+
+  <div class="button-container">
+    <button class="button" onclick="alert('ভর্তি ফর্ম শীঘ্রই আসছে')">
+      <div class="label"><i class="fas fa-user-plus"></i>ভর্তি</div>
+      <div class="background" style="animation-name: bgChange1;"></div>
+    </button>
+    <button class="button" onclick="alert('নোটিশ বোর্ড প্রস্তুত হচ্ছে')">
+      <div class="label"><i class="fas fa-bell"></i>নোটিশ</div>
+      <div class="background" style="animation-name: bgChange2;"></div>
+    </button>
+    <button class="button" onclick="document.getElementById('teachers').style.display='block'">
+      <div class="label"><i class="fas fa-chalkboard-teacher"></i>শিক্ষক তালিকা</div>
+      <div class="background" style="animation-name: bgChange3;"></div>
+    </button>
+    <button class="button" onclick="alert('গ্যালারি শীঘ্রই আসছে')">
+      <div class="label"><i class="fas fa-image"></i>গ্যালারি</div>
+      <div class="background" style="animation-name: bgChange4;"></div>
+    </button>
+    <button class="button" onclick="alert('যোগাযোগ ফর্ম আসছে')">
+      <div class="label"><i class="fas fa-phone-alt"></i>যোগাযোগ</div>
+      <div class="background" style="animation-name: bgChange5;"></div>
+    </button>
+    <button class="button" onclick="alert('TRX নাম্বার: 01960393529')">
+      <div class="label"><i class="fas fa-money-bill-wave"></i>TRX পেমেন্ট</div>
+      <div class="background" style="animation-name: bgChange6;"></div>
+    </button>
+  </div>
+
+  <div id="teachers" class="teacher-list">
+    <h3>শিক্ষক তালিকা</h3>
+    <p>জনাব রহমান স্যার - 01711111111</p>
+    <p>জনাবা লায়লা ম্যাডাম - 01822222222</p>
+    <p>জনাব করিম স্যার - 01933333333</p>
+  </div>
+</body>
+</html>

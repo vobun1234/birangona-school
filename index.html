@@ -1,87 +1,53 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      color: white;
-      text-align: center;
-      background-size: cover;
-      background-position: center;
-      transition: background-image 1s ease-in-out;
-    }
-
-    h1 {
-      font-size: 40px;
-      padding: 40px 10px 20px;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    .button-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 30px;
-    }
-
-    .btn {
-      font-size: 20px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.5s;
-    }
-
-    .btn:hover {
-      background-color: #444;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
-      }
-
-      .btn {
-        font-size: 16px;
-        padding: 15px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; text-align: center; background-color: #f2f2f2; }
+        h1 { font-size: 3em; margin-top: 20px; animation: colorChange 3s infinite; }
+        .teacher-list { margin: 20px auto; padding: 20px; border: 1px solid #ccc; background: #fff; width: 80%; }
+        .teacher { margin: 10px 0; }
+        button.copy-btn { margin-left: 10px; cursor: pointer; }
+        .contact-section { margin: 30px auto; padding: 20px; background: #e6ffe6; width: 80%; border-radius: 10px; }
+        @keyframes colorChange {
+            0% { color: red; }
+            33% { color: green; }
+            66% { color: blue; }
+            100% { color: red; }
+        }
+    </style>
 </head>
 <body>
-
-  <h1>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</h1>
-
-  <div class="button-container">
-    <button class="btn" onclick="location.href='admission.html'">ভর্তি</button>
-    <button class="btn" onclick="location.href='teachers.html'">শিক্ষক তালিকা</button>
-    <button class="btn" onclick="location.href='notices.html'">নোটিশ</button>
-    <button class="btn" onclick="location.href='gallery.html'">গ্যালারি</button>
-    <button class="btn" onclick="location.href='contact.html'">যোগাযোগ</button>
-    <button class="btn" onclick="location.href='payment.html'">TRX দিয়ে বেতন দিন</button>
-  </div>
-
-  <script>
-    const backgrounds = [
-      'https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1600&q=80'
-    ];
-
-    let index = 0;
-    function changeBackground() {
-      document.body.style.backgroundImage = `url(${backgrounds[index]})`;
-      index = (index + 1) % backgrounds.length;
-    }
-
-    changeBackground();
-    setInterval(changeBackground, 30000);
-  </script>
+    <h1>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</h1>
+    <div class="teacher-list">
+        <h2>শিক্ষক তালিকা</h2>
+        <div class="teacher">
+            <strong>প্রধান শিক্ষক:</strong> মো: এমদাদুল হক মিলন - 01960393529 
+            <button class="copy-btn" onclick="copyText('01960393529')">Copy</button>
+        </div>
+        <div class="teacher">
+            <strong>সহ:প্রধান শিক্ষক:</strong> মো: মাসুদ মিয়া - 01906504938 
+            <button class="copy-btn" onclick="copyText('01906504938')">Copy</button>
+        </div>
+        <div class="teacher">
+            <strong>সেনি: সহ:শিক্ষক:</strong> মো: রাকিবুল ইসলাম - 01932123148 
+            <button class="copy-btn" onclick="copyText('01932123148')">Copy</button>
+        </div>
+    </div>
+    <div class="contact-section">
+        <h2>যোগাযোগ</h2>
+        <p>01937201839</p>
+        <p>যে কোনো সমস্যায় WhatsApp-এ যোগাযোগ করুন।</p>
+    </div>
+    <script>
+        function copyText(number) {
+            navigator.clipboard.writeText(number).then(() => {
+                alert("Number copied: " + number);
+            });
+        }
+    </script>
 </body>
 </html>

@@ -6,48 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
     <style>
-        body { font-family: 'Arial', sans-serif; text-align: center; background-color: #f2f2f2; }
-        h1 { font-size: 3em; margin-top: 20px; animation: colorChange 3s infinite; }
-        .teacher-list { margin: 20px auto; padding: 20px; border: 1px solid #ccc; background: #fff; width: 80%; }
-        .teacher { margin: 10px 0; }
-        button.copy-btn { margin-left: 10px; cursor: pointer; }
-        .contact-section { margin: 30px auto; padding: 20px; background: #e6ffe6; width: 80%; border-radius: 10px; }
-        @keyframes colorChange {
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            animation: rotateColors 3s infinite;
+            transform: rotate(-5deg);
+            margin: 30px auto 10px;
+        }
+        h2 {
+            font-size: 1.5em;
+            animation: changeColor 5s infinite;
+        }
+        @keyframes changeColor {
             0% { color: red; }
-            33% { color: green; }
-            66% { color: blue; }
-            100% { color: red; }
+            25% { color: green; }
+            50% { color: blue; }
+            75% { color: orange; }
+            100% { color: purple; }
+        }
+        @keyframes rotateColors {
+            0% { color: crimson; }
+            25% { color: teal; }
+            50% { color: gold; }
+            75% { color: hotpink; }
+            100% { color: navy; }
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px;
+        }
+        .button-box {
+            background-size: cover;
+            background-position: center;
+            width: 200px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 10s linear;
+            color: white;
+            position: relative;
+        }
+        .button-box::after {
+            content: attr(data-icon);
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 1.5em;
+        }
+        .teachers {
+            margin: 30px;
+            text-align: left;
+        }
+        .teacher-entry {
+            background: #e9e9e9;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 500px;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
+
+    <h2>Md.Vobun (Tauhedul Islam)</h2>
     <h1>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</h1>
-    <div class="teacher-list">
-        <h2>শিক্ষক তালিকা</h2>
-        <div class="teacher">
-            <strong>প্রধান শিক্ষক:</strong> মো: এমদাদুল হক মিলন - 01960393529 
-            <button class="copy-btn" onclick="copyText('01960393529')">Copy</button>
-        </div>
-        <div class="teacher">
-            <strong>সহ:প্রধান শিক্ষক:</strong> মো: মাসুদ মিয়া - 01906504938 
-            <button class="copy-btn" onclick="copyText('01906504938')">Copy</button>
-        </div>
-        <div class="teacher">
-            <strong>সেনি: সহ:শিক্ষক:</strong> মো: রাকিবুল ইসলাম - 01932123148 
-            <button class="copy-btn" onclick="copyText('01932123148')">Copy</button>
-        </div>
+
+    <div class="button-container">
+        <div class="button-box" style="background-image: url('bg1.jpg');" data-icon="📋">ভর্তি</div>
+        <div class="button-box" style="background-image: url('bg2.jpg');" data-icon="📜">নোটিশ</div>
+        <div class="button-box" style="background-image: url('bg3.jpg');" data-icon="🧑‍🏫">শিক্ষক তালিকা</div>
+        <div class="button-box" style="background-image: url('bg4.jpg');" data-icon="☎️">যোগাযোগ</div>
+        <div class="button-box" style="background-image: url('bg5.jpg');" data-icon="💸">TRX বেতন</div>
     </div>
-    <div class="contact-section">
-        <h2>যোগাযোগ</h2>
-        <p>01937201839</p>
-        <p>যে কোনো সমস্যায় WhatsApp-এ যোগাযোগ করুন।</p>
+
+    <div class="teachers">
+        <h3>শিক্ষক তালিকা</h3>
+        <div class="teacher-entry">মো: এমদাদুল হক মিলন (প্রধান শিক্ষক) - 01960393529 
+            <button class="copy-btn" onclick="copyText('01960393529')">Copy</button></div>
+        <div class="teacher-entry">মো: মাসুদ মিয়া (সহ: প্রধান শিক্ষক) - 01906504938 
+            <button class="copy-btn" onclick="copyText('01906504938')">Copy</button></div>
+        <div class="teacher-entry">মো: রাকিবুল ইসলাম (সিনি: সহ: শিক্ষক) - 01932123148 
+            <button class="copy-btn" onclick="copyText('01932123148')">Copy</button></div>
     </div>
+
+    <h3>যোগাযোগ: 01937201839 (WhatsApp)</h3>
+
     <script>
         function copyText(number) {
             navigator.clipboard.writeText(number).then(() => {
-                alert("Number copied: " + number);
+                alert("নাম্বার কপি হয়েছে: " + number);
             });
         }
     </script>
+
 </body>
 </html>

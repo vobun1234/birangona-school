@@ -1,150 +1,111 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
-      background: #f0f0f0;
+      background: #f9f9f9;
     }
+
     .sub-header {
-      font-size: 1.5em;
-      margin-top: 20px;
-      animation: colorChange 5s infinite alternate;
+      font-size: 1.2em;
+      margin-top: 15px;
+      animation: colorShift 5s infinite alternate;
     }
-    #creator-photo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 3px solid black;
-      margin-top: 10px;
-    }
-    .school-name {
-      font-size: 2.5em;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-    .school-name span {
-      display: inline-block;
-      padding: 0 5px;
-      animation: colorChange 3s infinite alternate;
-    }
-    @keyframes colorChange {
+
+    @keyframes colorShift {
       0% { color: red; }
       25% { color: blue; }
       50% { color: green; }
-      75% { color: purple; }
-      100% { color: orange; }
+      75% { color: orange; }
+      100% { color: purple; }
+    }
+
+    .school-name {
+      font-size: 2em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .school-name span {
+      padding: 0 5px;
+      display: inline-block;
+      animation: nameColor 4s infinite alternate;
+    }
+
+    @keyframes nameColor {
+      0% { color: #e74c3c; }
+      25% { color: #3498db; }
+      50% { color: #2ecc71; }
+      75% { color: #9b59b6; }
+      100% { color: #f1c40f; }
     }
 
     .button-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 40px;
-      margin: 40px 0;
+      margin: 20px;
+      gap: 20px;
     }
 
     .button {
-      width: 200px;
-      height: 180px;
+      padding: 20px;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
+      color: white;
+      font-size: 1.2em;
       border: none;
-      border-radius: 15px;
-      overflow: hidden;
+      border-radius: 12px;
       cursor: pointer;
-      position: relative;
-      animation: buttonBgColor 10s infinite alternate;
+      width: 180px;
+      transition: transform 0.3s;
     }
 
-    @keyframes buttonBgColor {
-      0% { background-color: #ffb3b3; }
-      25% { background-color: #b3d9ff; }
-      50% { background-color: #b3ffb3; }
-      75% { background-color: #ffffb3; }
-      100% { background-color: #ffccff; }
+    .button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #2575fc, #6a11cb);
     }
 
-    .label {
-      position: relative;
-      z-index: 2;
-      font-size: 1.1em;
-      font-weight: bold;
-      background: rgba(255,255,255,0.8);
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-    }
-
-    .label i {
-      margin-right: 8px;
-    }
-
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      background-size: cover;
-      background-position: center;
-      animation-duration: 5s;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-    }
-
-    @keyframes bgChange1 {
-      0% { background-image: url('https://via.placeholder.com/200x180?text=School+A1'); }
-      50% { background-image: url('https://via.placeholder.com/200x180?text=School+A2'); }
-      100% { background-image: url('https://via.placeholder.com/200x180?text=School+A3'); }
-    }
-    @keyframes bgChange2 {
-      0% { background-image: url('https://via.placeholder.com/200x180?text=School+B1'); }
-      50% { background-image: url('https://via.placeholder.com/200x180?text=School+B2'); }
-      100% { background-image: url('https://via.placeholder.com/200x180?text=School+B3'); }
-    }
-    @keyframes bgChange3 {
-      0% { background-image: url('https://via.placeholder.com/200x180?text=School+C1'); }
-      50% { background-image: url('https://via.placeholder.com/200x180?text=School+C2'); }
-      100% { background-image: url('https://via.placeholder.com/200x180?text=School+C3'); }
-    }
-    @keyframes bgChange4 {
-      0% { background-image: url('https://via.placeholder.com/200x180?text=School+D1'); }
-      50% { background-image: url('https://via.placeholder.com/200x180?text=School+D2'); }
-      100% { background-image: url('https://via.placeholder.com/200x180?text=School+D3'); }
-    }
-    @keyframes bgChange5 {
-      0% { background-image: url('https://via.placeholder.com/200x180?text=School+E1'); }
-      50% { background-image: url('https://via.placeholder.com/200x180?text=School+E2'); }
-      100% { background-image: url('https://via.placeholder.com/200x180?text=School+E3'); }
-    }
-    @keyframes bgChange6 {
-      0% { background-image: url('https://via.placeholder.com/200x180?text=School+F1'); }
-      50% { background-image: url('https://via.placeholder.com/200x180?text=School+F2'); }
-      100% { background-image: url('https://via.placeholder.com/200x180?text=School+F3'); }
-    }
-
-    .teacher-list {
+    .content {
       display: none;
-      margin-top: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: left;
     }
-    .teacher-list h3 {
-      margin-bottom: 10px;
+
+    .content h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+
+    .copy-button {
+      background: #27ae60;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 8px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .copy-button:hover {
+      background: #219150;
     }
   </style>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
+
   <div class="sub-header">Md.Vobun (Tauhedul Islam)</div>
-  <img id="creator-photo" src="your_photo.jpg" alt="Your Photo">
   <div class="school-name">
     <span>বীরাঙ্গনা</span>
     <span>সখিনা</span>
@@ -153,37 +114,69 @@
   </div>
 
   <div class="button-container">
-    <button class="button" onclick="alert('ভর্তি ফর্ম শীঘ্রই আসছে')">
-      <div class="label"><i class="fas fa-user-plus"></i>ভর্তি</div>
-      <div class="background" style="animation-name: bgChange1;"></div>
-    </button>
-    <button class="button" onclick="alert('নোটিশ বোর্ড প্রস্তুত হচ্ছে')">
-      <div class="label"><i class="fas fa-bell"></i>নোটিশ</div>
-      <div class="background" style="animation-name: bgChange2;"></div>
-    </button>
-    <button class="button" onclick="document.getElementById('teachers').style.display='block'">
-      <div class="label"><i class="fas fa-chalkboard-teacher"></i>শিক্ষক তালিকা</div>
-      <div class="background" style="animation-name: bgChange3;"></div>
-    </button>
-    <button class="button" onclick="alert('গ্যালারি শীঘ্রই আসছে')">
-      <div class="label"><i class="fas fa-image"></i>গ্যালারি</div>
-      <div class="background" style="animation-name: bgChange4;"></div>
-    </button>
-    <button class="button" onclick="alert('যোগাযোগ ফর্ম আসছে')">
-      <div class="label"><i class="fas fa-phone-alt"></i>যোগাযোগ</div>
-      <div class="background" style="animation-name: bgChange5;"></div>
-    </button>
-    <button class="button" onclick="alert('TRX নাম্বার: 01960393529')">
-      <div class="label"><i class="fas fa-money-bill-wave"></i>TRX পেমেন্ট</div>
-      <div class="background" style="animation-name: bgChange6;"></div>
-    </button>
+    <button class="button" onclick="showContent('admission')">ভর্তি</button>
+    <button class="button" onclick="showContent('notice')">নোটিশ</button>
+    <button class="button" onclick="showContent('teachers')">শিক্ষক তালিকা</button>
+    <button class="button" onclick="showContent('gallery')">গ্যালারি</button>
+    <button class="button" onclick="showContent('contact')">যোগাযোগ</button>
+    <button class="button" onclick="showContent('trx')">TRX পেমেন্ট</button>
   </div>
 
-  <div id="teachers" class="teacher-list">
-    <h3>শিক্ষক তালিকা</h3>
-    <p>জনাব রহমান স্যার - 01711111111</p>
-    <p>জনাবা লায়লা ম্যাডাম - 01822222222</p>
-    <p>জনাব করিম স্যার - 01933333333</p>
+  <div id="admission" class="content">
+    <h3>ভর্তি তথ্য</h3>
+    <p>ভর্তির জন্য অনলাইনে আবেদন করুন অথবা বিদ্যালয়ে যোগাযোগ করুন। বয়স: ৬ বছর+, প্রয়োজনীয় কাগজ: জন্ম সনদ, ছবি।</p>
   </div>
+
+  <div id="notice" class="content">
+    <h3>নোটিশ</h3>
+    <ul>
+      <li>১ জুন: নতুন ক্লাস শুরু</li>
+      <li>৫ জুন: ইউনিফর্ম বিতরণ</li>
+      <li>১০ জুন: ফরম পূরণ শেষ</li>
+    </ul>
+  </div>
+
+  <div id="teachers" class="content">
+    <h3>শিক্ষক তালিকা</h3>
+    <ul>
+      <li>মোঃ আলমগীর হোসেন - 017XXXXXXXX <button class="copy-button" onclick="copyText('017XXXXXXXX')">Copy</button></li>
+      <li>মিসেস রুবিনা আক্তার - 018XXXXXXXX <button class="copy-button" onclick="copyText('018XXXXXXXX')">Copy</button></li>
+      <li>জনাব মঞ্জুর হোসেন - 019XXXXXXXX <button class="copy-button" onclick="copyText('019XXXXXXXX')">Copy</button></li>
+    </ul>
+  </div>
+
+  <div id="gallery" class="content">
+    <h3>গ্যালারি</h3>
+    <p>আমাদের স্কুলের ছবিসমূহ নিচে যুক্ত করা হবে।</p>
+    <img src="https://via.placeholder.com/300x200?text=School+Photo+1" alt="Photo1">
+    <img src="https://via.placeholder.com/300x200?text=School+Photo+2" alt="Photo2">
+  </div>
+
+  <div id="contact" class="content">
+    <h3>যোগাযোগ</h3>
+    <p>ঠিকানা: বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল, পঞ্চগড়।</p>
+    <p>মোবাইল: 01960393529</p>
+    <p>ইমেইল: info@school.com</p>
+  </div>
+
+  <div id="trx" class="content">
+    <h3>TRX পেমেন্ট</h3>
+    <p>TRX নম্বর: <strong>01960393529</strong> <button class="copy-button" onclick="copyText('01960393529')">Copy</button></p>
+    <p>পেমেন্ট করার পর নিচের ফর্মে TRX ID দিন।</p>
+    <input type="text" placeholder="আপনার TRX ID লিখুন" style="padding: 10px; width: 80%; border-radius: 8px; border: 1px solid #aaa;">
+  </div>
+
+  <script>
+    function showContent(id) {
+      document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('কপি হয়েছে: ' + text);
+      });
+    }
+  </script>
 </body>
 </html>

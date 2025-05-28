@@ -5,178 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f9f9f9;
-    }
-
-    .sub-header {
-      font-size: 1.2em;
-      margin-top: 15px;
-      animation: colorShift 5s infinite alternate;
-    }
-
+    body { font-family: Arial, sans-serif; text-align: center; background: #f9f9f9; margin: 0; }
+    .sub-header { font-size: 1.2em; margin-top: 15px; animation: colorShift 5s infinite alternate; }
     @keyframes colorShift {
-      0% { color: red; }
-      25% { color: blue; }
-      50% { color: green; }
-      75% { color: orange; }
-      100% { color: purple; }
+      0% { color: red; } 25% { color: blue; } 50% { color: green; } 75% { color: orange; } 100% { color: purple; }
     }
-
-    .school-name {
-      font-size: 2em;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
+    .school-name { font-size: 2em; font-weight: bold; margin: 10px 0; }
     .school-name span {
-      padding: 0 5px;
-      display: inline-block;
+      padding: 0 5px; display: inline-block;
       animation: nameColor 4s infinite alternate;
     }
-
     @keyframes nameColor {
-      0% { color: #e74c3c; }
-      25% { color: #3498db; }
-      50% { color: #2ecc71; }
-      75% { color: #9b59b6; }
-      100% { color: #f1c40f; }
+      0% { color: #e74c3c; } 25% { color: #3498db; } 50% { color: #2ecc71; } 75% { color: #9b59b6; } 100% { color: #f1c40f; }
     }
-
     .button-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 20px;
-      gap: 20px;
+      display: flex; flex-wrap: wrap; justify-content: center; margin: 20px; gap: 20px;
     }
-
     .button {
-      padding: 20px;
-      background: linear-gradient(45deg, #6a11cb, #2575fc);
-      color: white;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      width: 180px;
-      transition: transform 0.3s;
+      padding: 20px; background: linear-gradient(45deg, #6a11cb, #2575fc); color: white;
+      font-size: 1.2em; border: none; border-radius: 12px; cursor: pointer; width: 180px;
+      transition: transform 0.3s; text-decoration: none; display: inline-block;
     }
-
-    .button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(45deg, #2575fc, #6a11cb);
-    }
-
-    .content {
-      display: none;
-      margin: 20px auto;
-      max-width: 600px;
-      padding: 20px;
-      border: 2px solid #ccc;
-      border-radius: 12px;
-      background-color: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      text-align: left;
-    }
-
-    .content h3 {
-      margin-top: 0;
-      color: #2c3e50;
-    }
-
-    .copy-button {
-      background: #27ae60;
-      color: white;
-      padding: 5px 10px;
-      border: none;
-      border-radius: 8px;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-
-    .copy-button:hover {
-      background: #219150;
-    }
+    .button:hover { transform: scale(1.05); background: linear-gradient(45deg, #2575fc, #6a11cb); }
   </style>
 </head>
 <body>
-
   <div class="sub-header">Md.Vobun (Tauhedul Islam)</div>
   <div class="school-name">
-    <span>বীরাঙ্গনা</span>
-    <span>সখিনা</span>
-    <span>এম.টি.সি</span>
-    <span>মডেল স্কুল</span>
+    <span>বীরাঙ্গনা</span><span>সখিনা</span><span>এম.টি.সি</span><span>মডেল স্কুল</span>
   </div>
-
   <div class="button-container">
-    <button class="button" onclick="showContent('admission')">ভর্তি</button>
-    <button class="button" onclick="showContent('notice')">নোটিশ</button>
-    <button class="button" onclick="showContent('teachers')">শিক্ষক তালিকা</button>
-    <button class="button" onclick="showContent('gallery')">গ্যালারি</button>
-    <button class="button" onclick="showContent('contact')">যোগাযোগ</button>
-    <button class="button" onclick="showContent('trx')">TRX পেমেন্ট</button>
+    <a class="button" href="admission.html">ভর্তি</a>
+    <a class="button" href="notice.html">নোটিশ</a>
+    <a class="button" href="teachers.html">শিক্ষক তালিকা</a>
+    <a class="button" href="gallery.html">গ্যালারি</a>
+    <a class="button" href="contact.html">যোগাযোগ</a>
+    <a class="button" href="trx.html">TRX পেমেন্ট</a>
   </div>
-
-  <div id="admission" class="content">
-    <h3>ভর্তি তথ্য</h3>
-    <p>ভর্তির জন্য অনলাইনে আবেদন করুন অথবা বিদ্যালয়ে যোগাযোগ করুন। বয়স: ৬ বছর+, প্রয়োজনীয় কাগজ: জন্ম সনদ, ছবি।</p>
-  </div>
-
-  <div id="notice" class="content">
-    <h3>নোটিশ</h3>
-    <ul>
-      <li>১ জুন: নতুন ক্লাস শুরু</li>
-      <li>৫ জুন: ইউনিফর্ম বিতরণ</li>
-      <li>১০ জুন: ফরম পূরণ শেষ</li>
-    </ul>
-  </div>
-
-  <div id="teachers" class="content">
-    <h3>শিক্ষক তালিকা</h3>
-    <ul>
-      <li>মোঃ আলমগীর হোসেন - 017XXXXXXXX <button class="copy-button" onclick="copyText('017XXXXXXXX')">Copy</button></li>
-      <li>মিসেস রুবিনা আক্তার - 018XXXXXXXX <button class="copy-button" onclick="copyText('018XXXXXXXX')">Copy</button></li>
-      <li>জনাব মঞ্জুর হোসেন - 019XXXXXXXX <button class="copy-button" onclick="copyText('019XXXXXXXX')">Copy</button></li>
-    </ul>
-  </div>
-
-  <div id="gallery" class="content">
-    <h3>গ্যালারি</h3>
-    <p>আমাদের স্কুলের ছবিসমূহ নিচে যুক্ত করা হবে।</p>
-    <img src="https://via.placeholder.com/300x200?text=School+Photo+1" alt="Photo1">
-    <img src="https://via.placeholder.com/300x200?text=School+Photo+2" alt="Photo2">
-  </div>
-
-  <div id="contact" class="content">
-    <h3>যোগাযোগ</h3>
-    <p>ঠিকানা: বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল, পঞ্চগড়।</p>
-    <p>মোবাইল: 01960393529</p>
-    <p>ইমেইল: info@school.com</p>
-  </div>
-
-  <div id="trx" class="content">
-    <h3>TRX পেমেন্ট</h3>
-    <p>TRX নম্বর: <strong>01960393529</strong> <button class="copy-button" onclick="copyText('01960393529')">Copy</button></p>
-    <p>পেমেন্ট করার পর নিচের ফর্মে TRX ID দিন।</p>
-    <input type="text" placeholder="আপনার TRX ID লিখুন" style="padding: 10px; width: 80%; border-radius: 8px; border: 1px solid #aaa;">
-  </div>
-
-  <script>
-    function showContent(id) {
-      document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert('কপি হয়েছে: ' + text);
-      });
-    }
-  </script>
 </body>
 </html>

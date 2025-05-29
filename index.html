@@ -1,110 +1,239 @@
-<!DOCTYPE html><html lang="bn">
+<!DOCTYPE html>
+<html lang="bn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>বীরাঙ্গনা স্কুল লগইন ও রেজিস্ট্রেশন</title>
+  <title>বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #c2e59c, #64b3f4);
-      text-align: center;
-      padding: 50px;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+      overflow-x: hidden;
+      transition: background 2s;
     }
-    form {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      width: 300px;
+
+    .magic-bg {
+      animation: magicBackground 20s infinite alternate;
     }
-    input {
+
+    @keyframes magicBackground {
+      0% { background: linear-gradient(to right, #ff9a9e, #fad0c4); }
+      25% { background: linear-gradient(to right, #a1c4fd, #c2e9fb); }
+      50% { background: linear-gradient(to right, #d4fc79, #96e6a1); }
+      75% { background: linear-gradient(to right, #fbc2eb, #a6c1ee); }
+      100% { background: linear-gradient(to right, #ffecd2, #fcb69f); }
+    }
+
+    .sub-header {
+      font-size: 1.5em;
+      margin-top: 15px;
+      animation: colorShift 5s infinite alternate;
+      font-weight: bold;
+    }
+
+    @keyframes colorShift {
+      0% { color: red; }
+      25% { color: blue; }
+      50% { color: green; }
+      75% { color: orange; }
+      100% { color: purple; }
+    }
+
+    .school-name {
+      font-size: 2.5em;
+      font-weight: bold;
       margin: 10px 0;
-      padding: 10px;
-      width: 90%;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
     }
-    button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
+
+    .school-name span {
+      padding: 0 10px;
+      display: inline-block;
+      animation: nameColor 4s infinite alternate;
+    }
+
+    @keyframes nameColor {
+      0% { color: #e74c3c; }
+      25% { color: #3498db; }
+      50% { color: #2ecc71; }
+      75% { color: #9b59b6; }
+      100% { color: #f1c40f; }
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+      gap: 20px;
+    }
+
+    .button {
+      padding: 20px;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
       color: white;
+      font-size: 1.2em;
       border: none;
-      border-radius: 5px;
+      border-radius: 12px;
+      cursor: pointer;
+      width: 200px;
+      transition: all 0.5s ease-in-out;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .button:hover {
+      transform: scale(1.1) rotate(2deg);
+      background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    }
+
+    .content {
+      display: none;
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: left;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .copy-button {
+      background: #27ae60;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 8px;
+      margin-left: 10px;
       cursor: pointer;
     }
-    h2 {
-      color: #333;
+
+    .copy-button:hover {
+      background: #219150;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    form {
+      margin-top: 15px;
     }
   </style>
 </head>
-<body>  <h2>রেজিস্ট্রেশন</h2>
-  <form id="registerForm">
-    <input type="text" id="regName" placeholder="নাম" required><br>
-    <input type="text" id="regPhone" placeholder="মোবাইল নাম্বার" required><br>
-    <input type="email" id="regEmail" placeholder="ইমেইল" required><br>
-    <input type="password" id="regPassword" placeholder="পাসওয়ার্ড" required><br>
-    <button type="submit">রেজিস্টার করুন</button>
-  </form>  <h2 style="margin-top: 50px;">লগইন</h2>
-  <form id="loginForm">
-    <input type="email" id="loginEmail" placeholder="ইমেইল" required><br>
-    <input type="password" id="loginPassword" placeholder="পাসওয়ার্ড" required><br>
-    <button type="submit">লগইন করুন</button>
-  </form>  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+<body class="magic-bg">
+  <div class="sub-header">Md.Vobun (Tauhedul Islam)</div>
+  <div class="school-name">
+    <span>বীরাঙ্গনা</span>
+    <span>সখিনা</span>
+    <span>এম.টি.সি</span>
+    <span>মডেল স্কুল</span>
+  </div>
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDvblOXvWqrYTBn-5WIi3LAdvSnvwdxZ08",
-      authDomain: "birangona-school.firebaseapp.com",
-      databaseURL: "https://birangona-school-default-rtdb.firebaseio.com",
-      projectId: "birangona-school",
-      storageBucket: "birangona-school.appspot.com",
-      messagingSenderId: "796339220397",
-      appId: "1:796339220397:web:a103f3bbe550ea715a3b24"
-    };
+  <div class="button-container">
+    <button class="button" onclick="showContent('admission')">ভর্তি</button>
+    <button class="button" onclick="showContent('notice')">নোটিশ</button>
+    <button class="button" onclick="showContent('teachers')">শিক্ষক তালিকা</button>
+    <button class="button" onclick="showContent('gallery')">গ্যালারি</button>
+    <button class="button" onclick="showContent('contact')">যোগাযোগ</button>
+    <button class="button" onclick="showContent('trx')">TRX পেমেন্ট</button>
+  </div>
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getDatabase(app);
+  <div id="admission" class="content">
+    <h3>ভর্তি ফর্ম</h3>
+    <form>
+      <label>নাম:</label>
+      <input type="text" placeholder="আপনার নাম লিখুন">
 
-    // রেজিস্ট্রেশন
-    document.getElementById("registerForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const name = document.getElementById("regName").value;
-      const phone = document.getElementById("regPhone").value;
-      const email = document.getElementById("regEmail").value;
-      const password = document.getElementById("regPassword").value;
+      <label>জন্ম তারিখ:</label>
+      <input type="date">
 
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          set(ref(db, 'users/' + user.uid), {
-            name: name,
-            phone: phone,
-            email: email
-          });
-          alert("রেজিস্ট্রেশন সফল হয়েছে!");
-        })
-        .catch((error) => {
-          alert("রেজিস্ট্রেশন ভুল হয়েছে: " + error.message);
-        });
-    });
+      <label>বয়স:</label>
+      <input type="number" min="5">
 
-    // লগইন
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const email = document.getElementById("loginEmail").value;
-      const password = document.getElementById("loginPassword").value;
+      <label>পিতার নাম:</label>
+      <input type="text">
 
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          alert("লগইন সফল হয়েছে");
-        })
-        .catch((error) => {
-          alert("লগইন ব্যর্থ: " + error.message);
-        });
-    });
-  </script></body>
+      <label>ঠিকানা:</label>
+      <textarea rows="3"></textarea>
+
+      <label>মোবাইল নম্বর:</label>
+      <input type="tel">
+
+      <label>ছবি আপলোড:</label>
+      <input type="file">
+
+      <button class="copy-button" type="submit">সাবমিট</button>
+    </form>
+  </div>
+
+  <div id="notice" class="content">
+    <h3>নোটিশ</h3>
+    <ul>
+      <li>১ জুন: নতুন ক্লাস শুরু</li>
+      <li>৫ জুন: ইউনিফর্ম বিতরণ</li>
+      <li>১০ জুন: ফরম পূরণ শেষ</li>
+    </ul>
+  </div>
+
+  <div id="teachers" class="content">
+    <h3>শিক্ষক তালিকা</h3>
+    <ul>
+      <li>মোঃ এমদাদুল হক মিলন - 017XXXXXXXX <button class="copy-button" onclick="copyText('017XXXXXXXX')">Copy</button></li>
+      <li>মো: মাসুদ কবির - 018XXXXXXXX <button class="copy-button" onclick="copyText('018XXXXXXXX')">Copy</button></li>
+      <li>মো: রাকিবুল ইসলাম  - 019XXXXXXXX <button class="copy-button" onclick="copyText('019XXXXXXXX')">Copy</button></li>
+    </ul>
+  </div>
+
+  <div id="gallery" class="content">
+    <h3>গ্যালারি</h3>
+    <img src="https://via.placeholder.com/300x200?text=Photo+1" alt="Photo1">
+    <img src="https://via.placeholder.com/300x200?text=Photo+2" alt="Photo2">
+  </div>
+
+  <div id="contact" class="content">
+    <h3>যোগাযোগ</h3>
+    <p>ঠিকানা: বীরাঙ্গনা সখিনা এম.টি.সি মডেল স্কুল, কুমরী,গৌরিপুর,ময়মনসিংহ ।</p>
+    <p>মোবাইল: 01937201839</p>
+    <p>ইমেইল: msvobun143@gmail.com</p>
+  </div>
+
+  <div id="trx" class="content">
+    <h3>TRX পেমেন্ট</h3>
+    <p>TRX নম্বর: <strong>01960393529</strong> <button class="copy-button" onclick="copyText('01960393529')">Copy</button></p>
+    <input type="text" placeholder="আপনার TRX ID লিখুন">
+    <button class="copy-button">সাবমিট করুন</button>
+  </div>
+
+  <script>
+    function showContent(id) {
+      document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('কপি করা হয়েছে: ' + text);
+      });
+    }
+  </script>
+</body>
 </html>

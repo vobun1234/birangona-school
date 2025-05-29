@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Login & Register</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      background: #0066cc;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0055aa;
+    }
+
+    .toggle {
+      text-align: center;
+      margin-top: 10px;
+      cursor: pointer;
+      color: #0066cc;
+    }
+
+    .toggle:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 id="form-title">রেজিস্ট্রেশন</h2>
+
+    <div id="form-container">
+      <label>নাম</label>
+      <input type="text" id="name">
+
+      <label>মোবাইল নাম্বার</label>
+      <input type="tel" id="mobile">
+
+      <label>ইমেইল</label>
+      <input type="email" id="email">
+
+      <label>পাসওয়ার্ড</label>
+      <input type="password" id="password">
+
+      <button onclick="register()">রেজিস্টার</button>
+      <div class="toggle" onclick="toggleForm()">আগে একাউন্ট আছে? লগইন করুন</div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDvblOXvWqrYTBn-5WIi3LAdvSnvwdxZ08",
+      authDomain: "birangona-school.firebaseapp.com",
+      projectId: "birangona-school",
+      storageBucket: "birangona-school.appspot.com",
+      messagingSenderId: "796339220397",
+      appId: "1:796339220397:web:a103f3bbe550ea715a3b24"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    let isLogin = false;
+
+    window.toggleForm = () => {
+      isLogin = !isLogin;
+      document.getElementById("form-title").innerText = isLogin ? "লগইন" : "রেজিস্ট্রেশন";
+      document.querySelector("button").innerText = isLogin ? "লগইন করুন" : "রেজিস্টার";
+      document.querySelector(".toggle").innerText = isLogin ? "নতুন একাউন্ট খুলতে চান?" : "আগে একাউন্ট আছে? লগইন করুন";
+      document.getElementById("name").style.display = isLogin ? "none" : "block";
+      document.getElementById("mobile").style.display = isLogin ? "none" : "block";
+    }
+
+    window.register = () => {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const name = document.getElementById("name").value;
+      const mobile = document.getElementById("mobile").value;
+
+      if (isLogin) {
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            alert("লগইন সফল!");
+          })
+          .catch((error) => {
+            alert("লগইন ব্যর্থ: " + error.message);
+          });
+      } else {
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            updateProfile(userCredential.user, {
+              displayName: name
+            });
+            alert("রেজিস্ট্রেশন সফল!");
+          })
+          .catch((error) => {
+            alert("রেজিস্ট্রেশন ব্যর্থ: " + error.message);
+          });
+      }
+    }
+  </script>
+
+</body>
+</html>

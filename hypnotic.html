@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>Hypnotic Spell</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    canvas {
+      border-radius: 50%;
+      z-index: 1;
+    }
+    h1 {
+      position: absolute;
+      top: 20px;
+      color: white;
+      text-align: center;
+      font-size: 30px;
+      z-index: 2;
+      animation: colorChange 2s infinite;
+    }
+    @keyframes colorChange {
+      0% { color: red; }
+      25% { color: yellow; }
+      50% { color: lime; }
+      75% { color: cyan; }
+      100% { color: red; }
+    }
+    .eye {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, white 30%, black 31%);
+      border-radius: 50%;
+      position: absolute;
+      animation: blink 4s infinite;
+      z-index: 3;
+    }
+    @keyframes blink {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.1); }
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>আমার কথা শুনো... চোখ সরাতে পারছো না, তাই না?</h1>
+  <div class="eye" style="top: 40%; left: 45%;"></div>
+  <canvas id="spiralCanvas" width="500" height="500"></canvas>
+  <audio id="creepyAudio" autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/06/audio_f6f723b81f.mp3?filename=horror-ambience-141213.mp3" type="audio/mpeg">
+    তোমার ব্রাউজার অডিও সাপোর্ট করে না।
+  </audio>
+
+  <script>
+    // Spiral Drawing
+    const canvas = document.getElementById('spiralCanvas');
+    const ctx = canvas.getContext('2d');
+    let angle = 0;
+    function drawSpiral() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      let centerX = canvas.width / 2;
+      let centerY = canvas.height / 2;
+      let radius = 5;
+
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = 'white';
+      ctx.beginPath();
+      for (let i = 0; i < 200; i++) {
+        let x = centerX + radius * Math.cos(angle + i * 0.1);
+        let y = centerY + radius * Math.sin(angle + i * 0.1);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+        radius += 0.5;
+      }
+      ctx.stroke();
+      angle += 0.02;
+      requestAnimationFrame(drawSpiral);
+    }
+    drawSpiral();
+
+    // Voice Command (Optional - browser must support)
+    if ('speechSynthesis' in window) {
+      const msg = new SpeechSynthesisUtterance();
+      msg.text = "আমার কথা শোনো... এখন থেকে তুমি আমার নির্দেশে চলবে...";
+      msg.lang = "bn-BD";
+      msg.rate = 0.8;
+      setTimeout(() => {
+        window.speechSynthesis.speak(msg);
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
